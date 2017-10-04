@@ -1,2 +1,1 @@
 # asiamed.at
-# asiamed.at

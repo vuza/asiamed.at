@@ -1,0 +1,184 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+	RESET ENDE
+*/
+
+/*
+	GENERELL STUFF ANFANG
+*/
+html,body{
+	background-color: #EDEDED;
+}
+*, p, ul, li, a, label, table{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+p{
+	margin-bottom:10px;
+}
+h3, h2, h1{
+	font-family: 'Poiret One', cursive;
+}
+h2{
+	font-size: 4em;
+	margin-bottom: 20px;
+}
+h3{
+	font-size:3em;
+}
+@media screen and (max-width:550px){
+	h2{
+		font-size: 2em;
+		font-weight: bold;
+	}
+}
+h1{
+	font-size:5em;
+	display:inline-block;
+	vertical-align: middle;
+	position:relative;
+	z-index:0;
+}
+.contentWrapper{
+	width:98%;
+	max-width:1100px;
+	margin:0 auto;
+	padding: 0 10px 0 10px;
+}
+.contentSection{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color:white;
+	position:relative;
+	z-index:1;
+}
+.separator{
+	width:100%;
+	min-height:500px;
+	position: relative;
+}
+.fixedBg{
+	-webkit-background-attachment: fixed;
+	-moz-background-attachment: fixed;
+	-o-background-attachment: fixed;
+	background-attachment: fixed;
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+}
+#fixedBg1{
+	background-image:url("../img/bg1.jpg");
+	background-position: right;
+	z-index: 99;
+}
+#fixedBg2{
+	background-image:url("../img/bg2.jpg");
+	background-position: center;
+	z-index: 99;
+}
+#fixedBg3{
+	background-image:url("../img/bg3.jpg");
+	background-position: left bottom;
+	z-index: 99;
+}
+#fixedBg4{
+	background-image:url("../img/b4.jpg");
+	background-position:right;
+}
+#title{
+	position:relative;
+	text-align: center;
+	min-height:0;
+	position:relative;
+	z-index:0;
+}
+#logo{
+	display:inline-block;
+	width:12em;
+	vertical-align: middle;
+}
+#contact p{
+	font-size: 1.3em;
+}
+.divider{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: solid #E7E7E7 1px;
+}
+.invisible{
+	display:none;
+}
+#titleContent{
+	padding-top: 100px;
+}
+#inputEmail3{
+	margin-top: 20px;
+}
+#emailText{
+	margin-top: 20px;
+}
+.g-recaptcha{
+	margin-top: 20px;
+}
+#sendContact{
+	margin-top: 20px;
+}
+#impressumLink{
+	margin-top: 20px;
+	display: block;
+}
