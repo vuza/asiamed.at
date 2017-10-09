@@ -26,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', getenv('GOOGLE_GA'), 'asiamed.at');
+        ga('create', '<?php echo getenv('GOOGLE_GA'); ?>', 'asiamed.at');
         ga('send', 'pageview');
     </script>
 
@@ -64,17 +64,6 @@
     </div>
 
     <section class="contentSection" id="seminare">
-        <?php
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, "http://api.asiamed.at/events");
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
-        $response = curl_exec($curl);
-        curl_close($curl);
-
-        $events = json_decode(file_get_contents('http://api.asiamed.at/events'), true);
-        ?>
-
         <div class="contentWrapper">
             <h2>Kurse: Srilankische, ayurvedische Ernährung</h2>
 
@@ -91,36 +80,15 @@
 
             <table class="table table-striped">
                 <?php
-                $descriptions = "";
-                $i = 0;
-                foreach($events as $event) {
-                    $event = json_decode($event,true);
+                $courses = array_diff(scandir('./kurse'), array('.', '..'));
+                
+                foreach ($courses as $course) {
+                    $preview = file_get_contents('./kurse/' . $course . '/preview.html');
 
-                    $startDate = DateTime::createFromFormat('D, d M Y H:i:s O', $event['startDate']);
-                    $startDate->setTimeZone(new DateTimeZone('Europe/Berlin'));
-                    $tr = "<tr><td>" . $event['name'] . "</td><td>" . $startDate->format('m.d.Y, H:i:s') . ' Uhr' . "</td><td>" . $event['duration'] . " Minuten</td>";
-
-                    if($event['description'] && $event['description'] !== ''){
-                        $description = $event['description'];
-                        if(strlen($description) > 120) {
-                            $description = substr($description, 0, 115) . '...';
-                            $tr .= "<td>" . $description . " <a data-eventName='" . $event['name'] . "' class='readFullEventDescription' style='cursor:pointer;' href='#' target='_blank'>(mehr)</a></td>";
-                        } else {
-                            $tr .= "<td>" . $description  . "</td>";
-                        }
-                    } else {
-                        $tr .= "<td></td>";
-                    }
-
-                    $tr .= "</tr>";
-                    echo $tr;
-                    $descriptions .= "<div style='display:none' class='description event-" . str_replace(' ', '-', $event['name']) . "'><h3>" . $event['name'] . "</h3><p>" . $event['description'] . "</p></div>";
-
-                    $i++;
-                }
-
-                if($i <= 0) {
-                  echo "<tr><td colspan='4'>Derzeit keine Kurse</td></tr>";
+                    echo '<tr>';
+                    echo '<td><p>' . $course . '</p></td>';
+                    echo '<td>' . $preview . ' <a href="/course.php?course=' . $course . '">mehr...</a></td>';
+                    echo '</tr>';
                 }
                 ?>
             </table>
@@ -141,8 +109,6 @@
             </script>
         </div>
     </section>
-
-
 
     <div class="separator">
         <div class="fixedBg" id="fixedBg3"></div>
@@ -185,7 +151,7 @@
                 <button id="sendContact" type="submit" class="btn btn-default" disabled="">Absenden</button>
             </form>
 
-            <a id="impressumLink" href="impressum.html">Impreesum</a>
+            <a id="impressumLink" href="/impressum.php">Impreesum</a>
         </div>
     </section>
 </body>
