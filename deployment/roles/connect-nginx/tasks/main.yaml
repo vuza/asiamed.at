@@ -1,0 +1,13 @@
+- name: Copy nginx config
+  copy:
+    src: '{{ role_path }}/files/asiamed.at.conf'
+    dest: '/etc/nginx/conf.d/asiamed.at.conf'
+    owner: root
+    group: root
+  become: True
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: True

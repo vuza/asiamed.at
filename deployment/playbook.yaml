@@ -1,0 +1,5 @@
+- hosts: default
+  roles:
+    - { role: copy-app, tags: [copy] }
+    - { role: build-run-app, tags: [run] }
+    - { role: connect-nginx, tags: [nginx] }
