@@ -111,7 +111,7 @@
     </section>
 
     <div class="separator">
-        <div class="fixedBg" id="fixedBg3"></div>
+        <div class="fixedBg" id="fixedBg5"></div>
     </div>
 
     <section class="contentSection" id="seminare">

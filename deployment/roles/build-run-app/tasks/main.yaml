@@ -1,3 +1,11 @@
+- name: Copy docker source
+  template:
+    src: '{{ role_path }}/templates/docker-compose.yaml.j2'
+    dest: '{{ www_root }}/{{ app_name }}/docker-compose.yaml'
+    owner: marlon
+    group: www-data
+  become: True
+
 - name: Build docker
   docker_service:
     project_src: '{{ www_root }}/{{ app_name }}'

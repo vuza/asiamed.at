@@ -7,7 +7,7 @@ services:
     - GOOGLE_GA={{ google_ga }}
     - GOOGLE_RECAPTCHA={{ google_recaptcha }}
     - MAIL={{ mail }}
-    - GOOGLE_RECAPTCHA_SITE_KEY=google_recaptcha_site_key:
+    - GOOGLE_RECAPTCHA_SITE_KEY={{ google_recaptcha_site_key }}
     volumes:
     - ./website:/var/www/html/src/
     ports:

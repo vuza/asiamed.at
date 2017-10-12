@@ -140,6 +140,10 @@ h1{
 	background-image:url("../img/b4.jpg");
 	background-position:right;
 }
+#fixedBg5{
+	backgound-image:url("../img/bg5.jpg");
+	background-position: right;
+}
 #title{
 	position:relative;
 	text-align: center;
