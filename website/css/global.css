@@ -142,7 +142,8 @@ h1{
 }
 #fixedBg5{
 	background-image:url("../img/bg5.jpg");
-	background-position: right;
+	z-index: 99;
+    background-position: center center;
 }
 #title{
 	position:relative;
