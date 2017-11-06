@@ -9,3 +9,4 @@
 - name: Build docker
   docker_service:
     project_src: '{{ www_root }}/{{ app_name }}'
+    recreate: always
