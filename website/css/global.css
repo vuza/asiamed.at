@@ -230,3 +230,20 @@ h1{
     right: 0;
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, .99) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0) 99%, rgba(255, 255, 255, .99) 100% );
 }
+footer img {
+    max-height: 5em;
+    width: auto;
+    vertical-align: middle;
+	margin-bottom: 2em;
+	margin-right: .5em;
+}
+.floatingImageWrapper{
+	overflow: hidden;
+    margin-bottom: 1.3em;
+}
+#andrea_portrait{
+	width: 7em;
+    float: left;
+    display: block;
+    margin-right: 2em;
+}
